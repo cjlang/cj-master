@@ -1,0 +1,61 @@
+#swagger配置
+swagger:
+  production: false
+  basic:
+    #是否开启密码
+    enable: true
+    username: admin
+    password: admin
+
+#mybatis-plus配置
+mybatis-plus:
+  #mapper扫描的路径
+  mapper-locations: mapper_/*.xml,mapper/*.xml
+  #实体扫描，多个package用逗号或者分号分隔
+  typeAliasesPackage: com.cj.auto.entity
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      #逻辑删除字段名称
+      logic-delete-field: delflag
+      #删除值
+      logic-delete-value: 1
+      #未删除的值
+      logic-not-delete-value: 0
+      #主键策略：雪花
+      id-type: assign-id
+
+
+#数据库连接池配置
+spring:
+  #mysql数据库连接串
+  datasource:
+    url: jdbc:mysql://localhost:3306/pms?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=UTC
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    initialSize: 5
+    minIdle: 5
+    maxActive: 20
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validaionQuery: SELECT 1 FROM DUAL
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    filters: stat,wall,log4j
+    maxPoolPreparedStatementPerConnectionSize: 20
+    useGlobalDataSourceStat: true
+    connectionProperties: druid.stat.mergeSql=true,druid.stat.slowSqlMills=500
+
+
+#日志开启
+logging:
+  level:
+    com.base.service.mapper : trace
+  file:
+    path: /Users/lly/Documents/lpsov/plsov-service

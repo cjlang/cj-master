@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cj.core.auto.mapper.CjUserMapper_">
+    <select id="getList" resultType="com.cj.core.auto.vo.CjUserVo">
+        select * from cj_user
+        <where>
+            del_flag=0
+            <if test="dto!=null and dto.id!=null and dto.id!=''">
+                and  id=#{dto.id}
+            </if>
+            <if test="dto!=null and dto.username!=null and dto.username!=''">
+                and  username=#{dto.username}
+            </if>
+            <if test="dto!=null and dto.password!=null and dto.password!=''">
+                and  password=#{dto.password}
+            </if>
+            <if test="dto!=null and dto.realName!=null and dto.realName!=''">
+                and  real_name=#{dto.realName}
+            </if>
+            <if test="dto!=null and dto.status!=null and dto.status!=''">
+                and  status=#{dto.status}
+            </if>
+            <if test="dto!=null and dto.pwdExpireDate!=null and dto.pwdExpireDate!=''">
+                and  pwd_expire_date=#{dto.pwdExpireDate}
+            </if>
+            <if test="dto!=null and dto.lastPwdUpdateDate!=null and dto.lastPwdUpdateDate!=''">
+                and  last_pwd_update_date=#{dto.lastPwdUpdateDate}
+            </if>
+            <if test="dto!=null and dto.lastLoginDate!=null and dto.lastLoginDate!=''">
+                and  last_login_date=#{dto.lastLoginDate}
+            </if>
+            <if test="dto!=null and dto.lastLoginIp!=null and dto.lastLoginIp!=''">
+                and  last_login_ip=#{dto.lastLoginIp}
+            </if>
+            <if test="dto!=null and dto.orgId!=null and dto.orgId!=''">
+                and  org_id=#{dto.orgId}
+            </if>
+            <if test="dto!=null and dto.createBy!=null and dto.createBy!=''">
+                and  create_by=#{dto.createBy}
+            </if>
+            <if test="dto!=null and dto.createDate!=null and dto.createDate!=''">
+                and  create_date=#{dto.createDate}
+            </if>
+            <if test="dto!=null and dto.updateBy!=null and dto.updateBy!=''">
+                and  update_by=#{dto.updateBy}
+            </if>
+            <if test="dto!=null and dto.updateDate!=null and dto.updateDate!=''">
+                and  update_date=#{dto.updateDate}
+            </if>
+        </where>
+    </select>
+    <select id="getPageList" resultType="com.cj.core.auto.vo.CjUserVo">
+        select * from cj_user
+        <where>
+            del_flag=0
+            <if test="dto!=null and dto.id!=null and dto.id!=''">
+                and  id=#{dto.id}
+            </if>
+            <if test="dto!=null and dto.username!=null and dto.username!=''">
+                and  username=#{dto.username}
+            </if>
+            <if test="dto!=null and dto.password!=null and dto.password!=''">
+                and  password=#{dto.password}
+            </if>
+            <if test="dto!=null and dto.realName!=null and dto.realName!=''">
+                and  real_name=#{dto.realName}
+            </if>
+            <if test="dto!=null and dto.status!=null and dto.status!=''">
+                and  status=#{dto.status}
+            </if>
+            <if test="dto!=null and dto.pwdExpireDate!=null and dto.pwdExpireDate!=''">
+                and  pwd_expire_date=#{dto.pwdExpireDate}
+            </if>
+            <if test="dto!=null and dto.lastPwdUpdateDate!=null and dto.lastPwdUpdateDate!=''">
+                and  last_pwd_update_date=#{dto.lastPwdUpdateDate}
+            </if>
+            <if test="dto!=null and dto.lastLoginDate!=null and dto.lastLoginDate!=''">
+                and  last_login_date=#{dto.lastLoginDate}
+            </if>
+            <if test="dto!=null and dto.lastLoginIp!=null and dto.lastLoginIp!=''">
+                and  last_login_ip=#{dto.lastLoginIp}
+            </if>
+            <if test="dto!=null and dto.orgId!=null and dto.orgId!=''">
+                and  org_id=#{dto.orgId}
+            </if>
+            <if test="dto!=null and dto.createBy!=null and dto.createBy!=''">
+                and  create_by=#{dto.createBy}
+            </if>
+            <if test="dto!=null and dto.createDate!=null and dto.createDate!=''">
+                and  create_date=#{dto.createDate}
+            </if>
+            <if test="dto!=null and dto.updateBy!=null and dto.updateBy!=''">
+                and  update_by=#{dto.updateBy}
+            </if>
+            <if test="dto!=null and dto.updateDate!=null and dto.updateDate!=''">
+                and  update_date=#{dto.updateDate}
+            </if>
+        </where>
+    </select>
+</mapper>

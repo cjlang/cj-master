@@ -1,0 +1,41 @@
+server:
+  port: 9090
+  servlet:
+    context-path: /service
+    session: 
+      #30分钟过期,使用redis后无效
+      timeout: PT30M
+  tomcat: 
+    basedir: target/tomcat
+swagger:
+  production: false
+  basic:
+    enable: true
+    username: admin
+    password: admin
+mybatis-plus:
+  mapper-locations: mapper_/*.xml,mapper/*.xml
+  #实体扫描，多个package用逗号或者分号分隔
+  typeAliasesPackage: com.cj.core.auto.entity,com.cj.auto.entity
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      logic-delete-field: delflag
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+      id-type: auto
+spring: 
+  application: 
+    name: service
+  aop:
+    auto: true
+  main:
+      allow-bean-definition-overriding: true
+  profiles:
+    active: dev
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+    serialization:
+      write-dates-as-timestamps: false

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cj.core.auto.mapper.CjUserConfigMapper_">
+    <select id="getList" resultType="com.cj.core.auto.vo.CjUserConfigVo">
+        select * from cj_user_config
+        <where>
+            del_flag=0
+            <if test="dto!=null and dto.id!=null and dto.id!=''">
+                and  id=#{dto.id}
+            </if>
+            <if test="dto!=null and dto.username!=null and dto.username!=''">
+                and  username=#{dto.username}
+            </if>
+            <if test="dto!=null and dto.groupName!=null and dto.groupName!=''">
+                and  group_name=#{dto.groupName}
+            </if>
+            <if test="dto!=null and dto.configName!=null and dto.configName!=''">
+                and  config_name=#{dto.configName}
+            </if>
+            <if test="dto!=null and dto.configValue!=null and dto.configValue!=''">
+                and  config_value=#{dto.configValue}
+            </if>
+            <if test="dto!=null and dto.active!=null and dto.active!=''">
+                and  active=#{dto.active}
+            </if>
+            <if test="dto!=null and dto.createDate!=null and dto.createDate!=''">
+                and  create_date=#{dto.createDate}
+            </if>
+            <if test="dto!=null and dto.createBy!=null and dto.createBy!=''">
+                and  create_by=#{dto.createBy}
+            </if>
+            <if test="dto!=null and dto.updateBy!=null and dto.updateBy!=''">
+                and  update_by=#{dto.updateBy}
+            </if>
+            <if test="dto!=null and dto.updateDate!=null and dto.updateDate!=''">
+                and  update_date=#{dto.updateDate}
+            </if>
+        </where>
+    </select>
+    <select id="getPageList" resultType="com.cj.core.auto.vo.CjUserConfigVo">
+        select * from cj_user_config
+        <where>
+            del_flag=0
+            <if test="dto!=null and dto.id!=null and dto.id!=''">
+                and  id=#{dto.id}
+            </if>
+            <if test="dto!=null and dto.username!=null and dto.username!=''">
+                and  username=#{dto.username}
+            </if>
+            <if test="dto!=null and dto.groupName!=null and dto.groupName!=''">
+                and  group_name=#{dto.groupName}
+            </if>
+            <if test="dto!=null and dto.configName!=null and dto.configName!=''">
+                and  config_name=#{dto.configName}
+            </if>
+            <if test="dto!=null and dto.configValue!=null and dto.configValue!=''">
+                and  config_value=#{dto.configValue}
+            </if>
+            <if test="dto!=null and dto.active!=null and dto.active!=''">
+                and  active=#{dto.active}
+            </if>
+            <if test="dto!=null and dto.createDate!=null and dto.createDate!=''">
+                and  create_date=#{dto.createDate}
+            </if>
+            <if test="dto!=null and dto.createBy!=null and dto.createBy!=''">
+                and  create_by=#{dto.createBy}
+            </if>
+            <if test="dto!=null and dto.updateBy!=null and dto.updateBy!=''">
+                and  update_by=#{dto.updateBy}
+            </if>
+            <if test="dto!=null and dto.updateDate!=null and dto.updateDate!=''">
+                and  update_date=#{dto.updateDate}
+            </if>
+        </where>
+    </select>
+</mapper>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cj.core.auto.mapper.CjRoleMenuMapper_">
+    <select id="getList" resultType="com.cj.core.auto.vo.CjRoleMenuVo">
+        select * from cj_role_menu
+        <where>
+            del_flag=0
+            <if test="dto!=null and dto.id!=null and dto.id!=''">
+                and  id=#{dto.id}
+            </if>
+            <if test="dto!=null and dto.roleId!=null and dto.roleId!=''">
+                and  role_id=#{dto.roleId}
+            </if>
+            <if test="dto!=null and dto.menuId!=null and dto.menuId!=''">
+                and  menu_id=#{dto.menuId}
+            </if>
+            <if test="dto!=null and dto.createBy!=null and dto.createBy!=''">
+                and  create_by=#{dto.createBy}
+            </if>
+            <if test="dto!=null and dto.createDate!=null and dto.createDate!=''">
+                and  create_date=#{dto.createDate}
+            </if>
+            <if test="dto!=null and dto.updateBy!=null and dto.updateBy!=''">
+                and  update_by=#{dto.updateBy}
+            </if>
+            <if test="dto!=null and dto.updateDate!=null and dto.updateDate!=''">
+                and  update_date=#{dto.updateDate}
+            </if>
+        </where>
+    </select>
+    <select id="getPageList" resultType="com.cj.core.auto.vo.CjRoleMenuVo">
+        select * from cj_role_menu
+        <where>
+            del_flag=0
+            <if test="dto!=null and dto.id!=null and dto.id!=''">
+                and  id=#{dto.id}
+            </if>
+            <if test="dto!=null and dto.roleId!=null and dto.roleId!=''">
+                and  role_id=#{dto.roleId}
+            </if>
+            <if test="dto!=null and dto.menuId!=null and dto.menuId!=''">
+                and  menu_id=#{dto.menuId}
+            </if>
+            <if test="dto!=null and dto.createBy!=null and dto.createBy!=''">
+                and  create_by=#{dto.createBy}
+            </if>
+            <if test="dto!=null and dto.createDate!=null and dto.createDate!=''">
+                and  create_date=#{dto.createDate}
+            </if>
+            <if test="dto!=null and dto.updateBy!=null and dto.updateBy!=''">
+                and  update_by=#{dto.updateBy}
+            </if>
+            <if test="dto!=null and dto.updateDate!=null and dto.updateDate!=''">
+                and  update_date=#{dto.updateDate}
+            </if>
+        </where>
+    </select>
+</mapper>

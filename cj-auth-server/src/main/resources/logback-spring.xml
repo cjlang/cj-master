@@ -1,0 +1,90 @@
+<!--<?xml version="1.0" encoding="UTF-8"?>-->
+<!--<configuration>-->
+<!--    &lt;!&ndash; 指定日志文件的根路径 &ndash;&gt;-->
+<!--    <property name="log.path" value="/Users/cjlang/Documents/log_back" />-->
+<!--    -->
+<!--	&lt;!&ndash; 控制台输出,打印的控制台输出到这里=========固定写法==不要动 &ndash;&gt;-->
+<!--    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">-->
+<!--        <encoder charset="UTF-8">-->
+<!--            <pattern>[%d{yyyy-MM-dd HH:mm:ss.SSS}] %level [%thread] %file:%line - %msg%n</pattern>-->
+<!--            <charset>UTF-8</charset>-->
+<!--        </encoder>-->
+<!--    </appender>-->
+<!--	&lt;!&ndash; INFO级别信息输出，系统启动信息等的会在这里=========固定写法==修改地址就行 &ndash;&gt;-->
+<!--    <appender name="SYS_INFO" class="ch.qos.logback.core.rolling.RollingFileAppender">-->
+<!--        <File>${log.path}/logs/sys-info.log</File>-->
+<!--        <append>true</append>-->
+<!--        &lt;!&ndash;过滤器,只打INFO级别的日志&ndash;&gt;-->
+<!--        <filter class="ch.qos.logback.classic.filter.LevelFilter">-->
+<!--            <level>INFO</level>-->
+<!--            <onMatch>ACCEPT</onMatch>-->
+<!--            <onMismatch>DENY</onMismatch>-->
+<!--        </filter>-->
+<!--        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">-->
+<!--            <fileNamePattern>${log.path}/logs/sys-info.log.%d</fileNamePattern>-->
+<!--            <maxHistory>30</maxHistory>-->
+<!--        </rollingPolicy>-->
+
+<!--        <encoder charset="UTF-8">-->
+<!--            <pattern>[%d{yyyy-MM-dd HH:mm:ss.SSS}] %level [%thread] %file:%line - %msg%n</pattern>-->
+<!--            <charset>UTF-8</charset>-->
+<!--        </encoder>-->
+<!--    </appender>-->
+
+<!--	&lt;!&ndash; ERROR级别信息输出，系统错误信息等的会在这里==========固定写法==修改地址就行 &ndash;&gt;-->
+<!--    <appender name="SYS_ERROR" class="ch.qos.logback.core.rolling.RollingFileAppender">-->
+<!--        <File>${log.path}/logs/sys-error.log</File>-->
+<!--        <append>true</append>-->
+<!--        &lt;!&ndash;过滤器,只打ERROR级别的日志&ndash;&gt;-->
+<!--        <filter class="ch.qos.logback.classic.filter.LevelFilter">-->
+<!--            <level>ERROR</level>-->
+<!--            <onMatch>ACCEPT</onMatch>-->
+<!--            <onMismatch>DENY</onMismatch>-->
+<!--        </filter>-->
+<!--        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">-->
+<!--            <fileNamePattern>${log.path}/logs/sys-error.log.%d</fileNamePattern>-->
+<!--            <maxHistory>12</maxHistory>-->
+<!--        </rollingPolicy>-->
+
+<!--        <encoder charset="UTF-8">-->
+<!--            <pattern>[%d{yyyy-MM-dd HH:mm:ss.SSS}] %level [%thread] %file:%line - %msg%n</pattern>-->
+<!--            <charset>UTF-8</charset>-->
+<!--        </encoder>-->
+<!--    </appender>-->
+
+<!--    &lt;!&ndash;业务逻辑日志，信息级别为INFO=========固定写法==根据业务需要添加=与下面成对&ndash;&gt;-->
+<!--    <appender name="BLLLogAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">-->
+<!--        <File>${log.path}/logs/bll-log.log</File>-->
+<!--        <append>true</append>-->
+<!--        <filter class="ch.qos.logback.classic.filter.LevelFilter">-->
+<!--            <level>INFO</level>-->
+<!--            <onMatch>ACCEPT</onMatch>-->
+<!--            <onMismatch>DENY</onMismatch>-->
+<!--        </filter>-->
+<!--        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">-->
+<!--            <fileNamePattern>${log.path}/logs/bll-log.log.%d</fileNamePattern>-->
+<!--            <maxHistory>12</maxHistory>-->
+<!--        </rollingPolicy>-->
+<!--        <encoder charset="UTF-8">-->
+<!--            <pattern>[%d{yyyy-MM-dd HH:mm:ss.SSS}] %level [%thread] %file:%line - %msg%n</pattern>-->
+<!--            <charset>UTF-8</charset>-->
+<!--        </encoder>-->
+<!--    </appender>-->
+<!--    -->
+
+<!--    &lt;!&ndash; 指定相关业务逻辑的日志的logger对象=========固定写法==根据业务需要添加=与上面成对&ndash;&gt;-->
+<!--    <logger name="BLL-LOG" additivity="false" level="INFO">-->
+<!--        <appender-ref ref="BLLLogAppender"/>-->
+<!--    </logger>-->
+<!--    -->
+<!--	&lt;!&ndash;日志级别就打印了INFO和ERROR&ndash;&gt;-->
+<!--    <logger name="com.act.award" level="INFO"/>-->
+<!--    <logger name="com.act.award" level="ERROR"/>-->
+
+<!--    &lt;!&ndash;将info和error分开打印&ndash;&gt;-->
+<!--    <root level="INFO">-->
+<!--        <appender-ref ref="CONSOLE"/>-->
+<!--        <appender-ref ref="SYS_INFO"/>-->
+<!--        <appender-ref ref="SYS_ERROR"/>-->
+<!--    </root>-->
+<!--</configuration>-->
